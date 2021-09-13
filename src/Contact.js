@@ -50,13 +50,13 @@ if (success === true) {
                         <form name="contact-form" method="POST" action="/contact?success=true" onSubmit={handleFormSubmit} netlify>
                         <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
-                                <label><input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact-name" className="form-control" placeholder="Name" required="" /></label>
+                            <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact-name" className="form-control" placeholder="Name" required="" />
                             </div>
                             <div className="form-group">
-                            <label><input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact-email" className="form-control" placeholder="Email" required="" /></label>
+                            <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact-email" className="form-control" placeholder="Email" required="" />
                             </div>
                             <div className="form-group">
-                            <label><textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact-message" className="form-control" rows="9" placeholder="Message" required=""></textarea></label>
+                            <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact-message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
                             </div>
                             <button type="submit" className="btn tm-btn-submit tm-btn ml-auto">Submit</button>
                         </form>
