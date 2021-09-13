@@ -12,7 +12,12 @@ setEmail("");
 setComment("");
     }
 
-    return (
+    return (<>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="contact_name" />
+  <input type="email" name="contact_email" />
+  <textarea name="contact_comment"></textarea>
+</form>
         <section id="tm-section-4" className="tm-section">
         <div className="tm-bg-transparent-black tm-contact-box-pad">
             <div className="row mb-4">
@@ -23,7 +28,8 @@ setComment("");
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form action="/contact" name="contact" method="POST" data-netlify="true" className="contact-form" onSubmit={handleFormSubmit}>
+                        <form action="/contact" name="contact" method="POST" netlify className="contact-form" onSubmit={handleFormSubmit}>
+                        <input type="hidden" name="form-name" value="contact" />
                             <div className="form-group">
                                 <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
                             </div>
@@ -31,7 +37,7 @@ setComment("");
                                 <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact_email" className="form-control" placeholder="Email" required="" />
                             </div>
                             <div className="form-group">
-                                <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact_message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
+                                <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact_comment" className="form-control" rows="9" placeholder="Message" required=""></textarea>
                             </div>
                             <button type="submit" className="btn tm-btn-submit tm-btn ml-auto">Submit</button>
                         </form>
@@ -48,5 +54,6 @@ setComment("");
             </div>
         </div>
     </section>
+    </>
     )
 }
