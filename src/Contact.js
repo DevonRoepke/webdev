@@ -47,7 +47,7 @@ if (success === true) {
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact-form" method="POST" data-netlify="true" action="/contact/?success=true" className="contact-form" onSubmit={handleFormSubmit}>
+                        <form name="contact-form" method="POST" className="contact-form" onSubmit={handleFormSubmit}>
                         <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
                                 <input value={name} onChange={e => setName(e.target.value)} aria-label="name" type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
