@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ comment, setComment ] = useState("");
+
 
     function handleFormSubmit(event) {
 event.preventDefault();
@@ -23,8 +24,8 @@ setComment("");
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact" method="POST" netlify className="contact-form" onSubmit={handleFormSubmit}>
-                        <input type="hidden" name="form-name" value="contact" />
+                        <form name="contact-form" method="POST" data-netlify={true} className="contact-form" onSubmit={handleFormSubmit}>
+                        <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
                                 <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
                             </div>
