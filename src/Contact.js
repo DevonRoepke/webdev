@@ -47,7 +47,7 @@ if (success === true) {
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact-form" method="POST" action="/contact/?success=true" className="contact-form" onSubmit={handleFormSubmit} netlify>
+                        <form name="contact-form" method="POST" className="contact-form" onSubmit={handleFormSubmit} netlify>
                         <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
                                 <label htmlFor="contact-name"></label>
