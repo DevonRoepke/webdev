@@ -24,16 +24,16 @@ setComment("");
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact-form" method="POST" data-netlify={true} className="contact-form" onSubmit={handleFormSubmit}>
+                        <form name="contact-form" method="POST" data-netlify="true" className="contact-form" onSubmit={handleFormSubmit}>
                         <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
-                                <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
+                                <input value={name} onChange={e => setName(e.target.value)} aria-label="name" type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
                             </div>
                             <div className="form-group">
-                                <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact_email" className="form-control" placeholder="Email" required="" />
+                                <input value={email} onChange={e => setEmail(e.target.value)} aria-label="email" type="email" id="contact_email" name="contact_email" className="form-control" placeholder="Email" required="" />
                             </div>
                             <div className="form-group">
-                                <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact_comment" className="form-control" rows="9" placeholder="Message" required=""></textarea>
+                                <textarea value={comment} onChange={e => setComment(e.target.value)} aria-label="message" id="contact_message" name="contact_message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
                             </div>
                             <button type="submit" className="btn tm-btn-submit tm-btn ml-auto">Submit</button>
                         </form>
