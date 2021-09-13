@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 
 export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ comment, setComment ] = useState("");
+const [success, setSuccess] = useState(false);
 
+useEffect(() => {
+  if ( window.location.search.includes('success=true') ) {
+    setSuccess(true);
+  }
+}, []);
 
-    function handleFormSubmit(event) {
-event.preventDefault();
-setName("");
-setEmail("");
-setComment("");
+function handleFormSubmit(event) {
+    fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", "name": name, "email": email, "comment": comment })
+          })
+            .then(() => alert("Thank your for the message! I will get back to you soon."))
+            .catch(error => alert(error));
+    event.preventDefault();
+    setName("");
+    setEmail("");
+    setComment("");
     }
+
+if (success === true) {
+    console.log("Message sent")
+}
 
     return (
         <section id="tm-section-4" className="tm-section">
@@ -24,7 +47,7 @@ setComment("");
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact-form" method="POST" data-netlify="true" className="contact-form" onSubmit={handleFormSubmit}>
+                        <form name="contact-form" method="POST" data-netlify="true" action="/contact/?success=true" className="contact-form" onSubmit={handleFormSubmit}>
                         <input type="hidden" name="form-name" value="contact-form" />
                             <div className="form-group">
                                 <input value={name} onChange={e => setName(e.target.value)} aria-label="name" type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
