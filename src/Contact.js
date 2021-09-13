@@ -9,7 +9,7 @@ const encode = (data) => {
 export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
-const [ comment, setComment ] = useState("");
+const [ message, setMessage ] = useState("");
 const [success, setSuccess] = useState(false);
 
 useEffect(() => {
@@ -19,17 +19,17 @@ useEffect(() => {
 }, []);
 
 function handleFormSubmit(event) {
-    fetch("/", {
+    fetch("/contact", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", "name": name, "email": email, "comment": comment })
+            body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
           })
             .then(() => alert("Thank your for the message! I will get back to you soon."))
             .catch(error => alert(error));
     event.preventDefault();
     setName("");
     setEmail("");
-    setComment("");
+    setMessage("");
     }
 
 if (success === true) {
@@ -47,16 +47,16 @@ if (success === true) {
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form name="contact-form" method="POST" action="/contact?success=true" onSubmit={handleFormSubmit} netlify>
-                        <input type="hidden" name="form-name" value="contact-form" />
+                        <form name="contact-form" method="post" action="/contact" onSubmit={handleFormSubmit} netlify>
+                        <input type="hidden" name="contact-form" value="contact-form" />
                             <div className="form-group">
-                            <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact-name" className="form-control" placeholder="Name" required="" />
+                            <input value={name} onChange={e => setName(e.target.value)} label="name" type="text" id="contact_name" name="contact-name" className="form-control" placeholder="Name" required="" />
                             </div>
                             <div className="form-group">
-                            <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact-email" className="form-control" placeholder="Email" required="" />
+                            <input value={email} onChange={e => setEmail(e.target.value)} label="email" type="email" id="contact_email" name="contact-email" className="form-control" placeholder="Email" required="" />
                             </div>
                             <div className="form-group">
-                            <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact-message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
+                            <textarea value={message} onChange={e => setMessage(e.target.value)} label="message" id="contact_message" name="contact-message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
                             </div>
                             <button type="submit" className="btn tm-btn-submit tm-btn ml-auto">Submit</button>
                         </form>
