@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Contact() {
+const [ name, setName ] = useState("");
+const [ email, setEmail ] = useState("");
+const [ comment, setComment ] = useState("");
 
     function handleFormSubmit(event) {
 event.preventDefault();
-return false
+setName("");
+setEmail("");
+setComment("");
     }
 
     return (
@@ -20,16 +25,15 @@ return false
                     <div className="contact_message">
                         <form action="/contact" name="contact" method="POST" data-netlify="true" className="contact-form" onSubmit={handleFormSubmit}>
                             <div className="form-group">
-                                <input type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
+                                <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
                             </div>
                             <div className="form-group">
-                                <input type="email" id="contact_email" name="contact_email" className="form-control" placeholder="Email" required="" />
+                                <input value={email} onChange={e => setEmail(e.target.value)} type="email" id="contact_email" name="contact_email" className="form-control" placeholder="Email" required="" />
                             </div>
                             <div className="form-group">
-                                <textarea id="contact_message" name="contact_message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
+                                <textarea value={comment} onChange={e => setComment(e.target.value)} id="contact_message" name="contact_message" className="form-control" rows="9" placeholder="Message" required=""></textarea>
                             </div>
                             <button type="submit" className="btn tm-btn-submit tm-btn ml-auto">Submit</button>
-                            <input type="hidden" name="form-name" value="contact" />
                         </form>
                     </div>
                 </div>
