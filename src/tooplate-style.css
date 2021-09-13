@@ -595,6 +595,12 @@ footer a { color: white; }
     background: url(/src/static/img/constructive_bg_03.jpg) no-repeat center center scroll;
 }
   }
+  @supports (-webkit-touch-callout: none) {
+    body {
+        height: 100%;
+        width: 100%;
+    }
+      }
 
 #loader-wrapper .loader-section {
     position: fixed;
