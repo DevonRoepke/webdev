@@ -590,6 +590,12 @@ footer a { color: white; }
     }
 }
 
+@supports (-webkit-touch-callout: none) {
+#bg-about {
+    background: url(/src/static/img/constructive_bg_03.jpg) no-repeat center center scroll;
+}
+  }
+
 #loader-wrapper .loader-section {
     position: fixed;
     top: 0;
