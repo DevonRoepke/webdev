@@ -45,6 +45,11 @@ function handleNavItemClick() {
   return navButton.classList.remove("show")
 }
   return (<>
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="contact_name" />
+  <input type="email" name="contact_email" />
+  <textarea name="contact_comment"></textarea>
+</form>
     <div className="App">
 
       {/*} Loader */}

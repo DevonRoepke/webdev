@@ -12,12 +12,7 @@ setEmail("");
 setComment("");
     }
 
-    return (<>
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="contact_name" />
-  <input type="email" name="contact_email" />
-  <textarea name="contact_comment"></textarea>
-</form>
+    return (
         <section id="tm-section-4" className="tm-section">
         <div className="tm-bg-transparent-black tm-contact-box-pad">
             <div className="row mb-4">
@@ -28,7 +23,7 @@ setComment("");
             <div className="row tm-page-4-content">
                 <div className="col-md-6 col-sm-12 tm-contact-col">
                     <div className="contact_message">
-                        <form action="/contact" name="contact" method="POST" netlify className="contact-form" onSubmit={handleFormSubmit}>
+                        <form name="contact" method="POST" netlify className="contact-form" onSubmit={handleFormSubmit}>
                         <input type="hidden" name="form-name" value="contact" />
                             <div className="form-group">
                                 <input value={name} onChange={e => setName(e.target.value)} type="text" id="contact_name" name="contact_name" className="form-control" placeholder="Name" required="" />
@@ -54,6 +49,5 @@ setComment("");
             </div>
         </div>
     </section>
-    </>
     )
 }
