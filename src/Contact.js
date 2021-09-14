@@ -11,15 +11,15 @@ const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ message, setMessage ] = useState("");
 
-
+const formData = { "name": name, "email": email, "message": message }
 
 function handleFormSubmit(event) {
-    fetch("/", {
+    fetch("/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact-form", "name": name, "email": email, "message": message  })
+        body: encode({ "form-name": "contact-form", ...formData  })
       })
-        .then(() => alert("Success!"))
+        .then(() => alert("Thank you for the message! I will get back to you soon."))
         .catch(error => alert(error))
         .finally(()=>{
             setName("");
@@ -44,7 +44,6 @@ function handleFormSubmit(event) {
                         <form 
                         name="contact-form" 
                         method="post" 
-                        action="/contact" 
                         onSubmit={handleFormSubmit} 
                         data-netlify="true"
                         >
