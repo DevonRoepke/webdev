@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
-
 export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
