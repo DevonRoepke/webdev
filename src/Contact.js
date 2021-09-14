@@ -19,7 +19,7 @@ useEffect(() => {
 }, []);
 
 function handleFormSubmit(event) {
-    fetch("/contact", {
+    fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
