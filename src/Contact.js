@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
+
 export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
@@ -13,6 +19,13 @@ useEffect(() => {
 }, []);
 
 function handleFormSubmit(event) {
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", name, email, message  })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
     event.preventDefault();
     setName("");
     setEmail("");
