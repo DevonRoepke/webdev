@@ -13,12 +13,11 @@ const [ message, setMessage ] = useState("");
 
 
 
-
 function handleFormSubmit(event) {
     fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact-form", name, email, message  })
+        body: encode({ "form-name": "contact-form", "name": name, "email": email, "message": message  })
       })
         .then(() => alert("Success!"))
         .catch(error => alert(error))
