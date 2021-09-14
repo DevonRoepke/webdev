@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function encode(data) {
     return Object.keys(data)
@@ -10,13 +10,9 @@ export default function Contact() {
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ message, setMessage ] = useState("");
-const [success, setSuccess] = useState(false);
 
-useEffect(() => {
-  if ( window.location.search.includes('success=true') ) {
-    setSuccess(true);
-  }
-}, []);
+
+
 
 function handleFormSubmit(event) {
     fetch("/", {
@@ -34,9 +30,6 @@ function handleFormSubmit(event) {
     event.preventDefault();
     }
 
-if (success === true) {
-    console.log("Message sent")
-}
 
     return (
         <section id="tm-section-4" className="tm-section">
@@ -52,7 +45,7 @@ if (success === true) {
                         <form 
                         name="contact-form" 
                         method="post" 
-                        action="/contact/?success=true" 
+                        action="/contact" 
                         onSubmit={handleFormSubmit} 
                         data-netlify="true"
                         >
