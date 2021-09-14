@@ -25,11 +25,13 @@ function handleFormSubmit(event) {
         body: encode({ "form-name": "contact-form", name, email, message  })
       })
         .then(() => alert("Success!"))
-        .catch(error => alert(error));
+        .catch(error => alert(error))
+        .finally(()=>{
+            setName("");
+            setEmail("");
+            setMessage("");
+        });
     event.preventDefault();
-    setName("");
-    setEmail("");
-    setMessage("");
     }
 
 if (success === true) {
