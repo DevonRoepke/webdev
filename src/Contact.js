@@ -13,6 +13,7 @@ useEffect(() => {
 }, []);
 
 function handleFormSubmit(event) {
+    event.preventDefault();
     setName("");
     setEmail("");
     setMessage("");
