@@ -19,14 +19,6 @@ useEffect(() => {
 }, []);
 
 function handleFormSubmit(event) {
-    fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", "name": name, "email": email, "message": message })
-          })
-            .then(() => alert("Thank your for the message! I will get back to you soon."))
-            .catch(error => alert(error));
-    event.preventDefault();
     setName("");
     setEmail("");
     setMessage("");
