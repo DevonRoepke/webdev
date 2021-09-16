@@ -12,9 +12,11 @@ export default function About() {
                 <div className="media tm-bg-transparent-black tm-border-white">
                     <i className="fab fa-apple tm-icon-circled tm-icon-media"></i>
                     <div className="media-body">
-                        <h3>React.js & React Native</h3>
-                        <p>React Native is a modern approach to building Applications for mobile phones such as iPhones and Androids.
-                            With a React.js Web Application, you can use React Native to build a mobile app that will go hand in hand with your website making for seamless integration between the two.
+                        <h3>React.js</h3>
+                        <p> 
+                            React is so powerful that you can turn off your internet and continue to navigate the pages of this website. 
+                            Because this in a Single Page Application, you only have to load the website one time and that is just the beginning of what React can do!
+                            Contact me to inquire about a React Application for your website!
                             </p>	
                     </div>
                 </div>

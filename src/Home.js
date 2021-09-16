@@ -6,7 +6,7 @@ export default function Home() {
         <>
         <div className="ml-auto">
             <header className="mb-4"><h1 className="tm-text-shadow">React.js Web Developer</h1></header>
-            <p className="mb-5 tm-font-big">I specialize in building Responsive Web Applications, making your website more effiecient, faster and vastly improving the User Experience. 
+            <p className="mb-5 tm-font-big">I specialize in building Responsive Web Applications, making your website more efficient, faster and vastly improving the User Experience. 
             Single Page Applications using React allow your website to load only one time.
             This means that when you navigate to a different page, the overall website will not load again, instead it will load only the content required for that page.
             Even if the device goes offline, you will still be able to navigate through the various pages of the application.

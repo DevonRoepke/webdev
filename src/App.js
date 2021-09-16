@@ -12,10 +12,13 @@ import './tooplate-style.css';
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
+import ReactGA from 'react-ga';
 
 
 export default function App() {
 const location = useLocation();
+ReactGA.initialize('UA-207738261-2');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
