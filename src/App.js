@@ -13,7 +13,7 @@ import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
 import ReactGA from "react-ga";
-
+ReactGA.initialize("UA-207738261-2");
 
 export default function App() {
 const location = useLocation();
