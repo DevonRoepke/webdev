@@ -13,7 +13,6 @@ import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
 import ReactGA from "react-ga";
-import RouteChangeTracker from './RouteChangeTracker.js';
 
 
 export default function App() {
