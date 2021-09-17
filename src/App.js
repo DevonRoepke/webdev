@@ -49,7 +49,6 @@ function handleNavItemClick() {
   return navButton.classList.remove("show")
 }
   return (<>
-  <RouteChangeTracker />
     <div className="App">
 
       {/*} Loader */}
