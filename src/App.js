@@ -12,8 +12,8 @@ import './tooplate-style.css';
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
-import useGaTracker from './useGaTracker.js'
 import ReactGA from "react-ga";
+import RouteChangeTracker from './RouteChangeTracker.js';
 
 
 export default function App() {
@@ -21,7 +21,6 @@ const location = useLocation();
 
 const TRACKING_ID = "UA-207738261-2";
 ReactGA.initialize(TRACKING_ID);
-useGaTracker();
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
@@ -49,6 +48,7 @@ function handleNavItemClick() {
   return navButton.classList.remove("show")
 }
   return (<>
+  <RouteChangeTracker />
     <div className="App">
 
       {/*} Loader */}
