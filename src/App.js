@@ -16,8 +16,9 @@ import useGaTracker from './useGaTracker'
 
 
 export default function App() {
-useGaTracker();
 const location = useLocation();
+
+useGaTracker();
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
@@ -25,7 +26,6 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 } 
 },[])
 useEffect(()=>{
-
 if (location.pathname === "/") {
   document.body.id = "bg-home";
 } else if (location.pathname === "/Services") {
