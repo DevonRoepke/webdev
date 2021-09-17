@@ -12,7 +12,7 @@ import './tooplate-style.css';
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
-import useGaTracker from './useGaTracker'
+import useGaTracker from './useGaTracker.js'
 
 
 export default function App() {
