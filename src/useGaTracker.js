@@ -7,7 +7,10 @@ const useGaTracker = () => {
     const [initialized, setInitialized] = useState(false);
 
     useEffect(() => {
-        ReactGA.initialize("UA-207738261-2");
+        ReactGA.initialize("UA-207738261-2", {
+            debug: true,
+            titleCase: false,
+        });
         setInitialized(true);
     }, []);
 
