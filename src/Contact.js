@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactGA from 'react-ga';
 
 function encode(data) {
     return Object.keys(data)
@@ -12,7 +11,6 @@ const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ message, setMessage ] = useState("");
 
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 const formData = { "contact-name": name, "contact-email": email, "contact-message": message }
 

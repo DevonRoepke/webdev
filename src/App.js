@@ -12,12 +12,12 @@ import './tooplate-style.css';
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
-import ReactGA from 'react-ga';
+import useGaTracker from './useGaTracker'
 
 
 export default function App() {
+useGaTracker();
 const location = useLocation();
-ReactGA.initialize('UA-207738261-2');
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
@@ -25,7 +25,6 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 } 
 },[])
 useEffect(()=>{
-console.log(location.pathname);
 
 if (location.pathname === "/") {
   document.body.id = "bg-home";

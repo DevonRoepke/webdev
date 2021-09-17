@@ -1,9 +1,7 @@
 import React from "react";
-import ReactGA from 'react-ga';
 
 
 export default function About() {
-    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
         <section id="tm-section-3" className="tm-section">						
         <div className="row mb-4">
