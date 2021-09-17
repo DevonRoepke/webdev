@@ -19,8 +19,10 @@ import RouteChangeTracker from './RouteChangeTracker.js';
 export default function App() {
 const location = useLocation();
 
-const TRACKING_ID = "UA-207738261-2";
-ReactGA.initialize(TRACKING_ID);
+useEffect(()=>{
+ReactGA.initialize("UA-207738261-2");
+ReactGA.pageview(window.location.pathname + window.location.search);
+},[])
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
