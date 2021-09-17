@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import ReactGA from 'react-ga';
 
 export default function Home() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
         <>
         <div className="ml-auto">

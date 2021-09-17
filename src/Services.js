@@ -1,9 +1,11 @@
 import React from "react";
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
+import ReactGA from 'react-ga';
 
 
 export default function Services() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
         <div className="tm-section" id="tmServicesContainer">
 <header className="mb-4" id="services-header"><h2 className="tm-text-shadow">My Services</h2></header>
