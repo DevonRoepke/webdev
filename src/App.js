@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, NavLink, useLocation } from "react-router-dom";
-import Home from "./Home.js";
-import Services from "./Services.js";
-import About from "./About.js";
-import Contact from "./Contact.js";
+import { NavLink, useLocation } from "react-router-dom";
+
 import './App.css';
 import './bootstrap.min.css';
 import './fontawesome-all.min.css';
@@ -13,6 +10,7 @@ import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
 import ReactGA from "react-ga";
+import Routes from './Routes.js';
 
 
 export default function App() {
@@ -99,20 +97,9 @@ function handleNavItemClick() {
 			</div>
 
       <div className="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
-<Switch>
-<Route exact path="/">
-<Home />
-</Route>
-<Route exact path="/services">
-<Services />
-</Route>
-<Route exact path="/about">
-<About />
-</Route>
-<Route exact path="/contact">
-<Contact />
-</Route>
-</Switch>
+
+<Routes />
+
 </div>	{/* .tm-content */}						
 			</div>	{/* row */}			
 		</div>
