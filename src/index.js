@@ -5,10 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
+
 ReactGA.initialize("UA-207738261-2");
 
+const history = createBrowserHistory();
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
+
 ReactDOM.render(
-  <HashRouter>
+  <HashRouter history={history}>
   <React.StrictMode>
     <App />
   </React.StrictMode>

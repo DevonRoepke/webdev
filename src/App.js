@@ -19,7 +19,6 @@ export default function App() {
 const location = useLocation();
 
 useEffect(()=>{
-ReactGA.set({ page: location.pathname })
 ReactGA.pageview(location.pathname);
 },[location])
 
