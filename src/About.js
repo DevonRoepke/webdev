@@ -1,7 +1,9 @@
 import React from "react";
+import useGoogleAnalytics from "./useGoogleAnalytics";
 
 
 export default function About() {
+    useGoogleAnalytics();
     return (
         <section id="tm-section-3" className="tm-section">						
         <div className="row mb-4">

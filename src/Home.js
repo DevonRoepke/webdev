@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import useGoogleAnalytics from "./useGoogleAnalytics";
 
 export default function Home() {
+    useGoogleAnalytics();
     return (
         <>
         <div className="ml-auto">

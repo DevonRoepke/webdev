@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useGoogleAnalytics from "./useGoogleAnalytics";
 
 function encode(data) {
     return Object.keys(data)
@@ -7,6 +8,8 @@ function encode(data) {
   }
 
 export default function Contact() {
+    useGoogleAnalytics();
+
 const [ name, setName ] = useState("");
 const [ email, setEmail ] = useState("");
 const [ message, setMessage ] = useState("");

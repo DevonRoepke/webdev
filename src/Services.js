@@ -1,9 +1,11 @@
 import React from "react";
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
+import useGoogleAnalytics from "./useGoogleAnalytics";
 
 
 export default function Services() {
+    useGoogleAnalytics();
     return (
         <div className="tm-section" id="tmServicesContainer">
 <header className="mb-4" id="services-header"><h2 className="tm-text-shadow">My Services</h2></header>
