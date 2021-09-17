@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { NavLink, useLocation } from "react-router-dom";
-
 import './App.css';
 import './bootstrap.min.css';
 import './fontawesome-all.min.css';
@@ -9,16 +8,12 @@ import './tooplate-style.css';
 import "./slick/slick.css";
 import "./slick/slick-theme.css";
 import "./static/img/constructive_bg_01.jpg";
-import ReactGA from "react-ga";
 import Routes from './Routes.js';
 
 
 export default function App() {
-const location = useLocation();
 
-useEffect(()=>{
-ReactGA.pageview(location.pathname);
-},[location])
+const location = useLocation();
 
 useEffect(()=>{
 if (document.readyState === "interactive" || document.readyState === "complete") {
